@@ -27,6 +27,6 @@
    Now it will listen to http requests through 8080 and direct it to 5001 with the conversion
 
 **Step 3: Configure Postman to Use the HTTP Proxy**
-   1)0Open Postman and go to Settings > Proxy.
+   1)Open Postman and go to Settings > Proxy.
    2)Enable the proxy by entering the following details:
    Proxy Server: 127.0.0.1:8080
