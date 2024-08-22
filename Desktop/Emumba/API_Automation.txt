@@ -8,3 +8,25 @@
      a) Configured SSH authentication using a username and password.
      b) Automated the transfer of files from the local machine to the remote server.
      c) Executed the installation script remotely to install the required libraries and tools.
+
+
+                              **SSH Tunnel Setup for Remote Access:**
+
+**Step 1**
+   -Connect to the remote server using SSH with dynamic port forwarding
+   -ssh -D 5001 ssh emumba@192.168.0.70
+   -The ‘-D’ will open up a tunnel with dynamic port forwarding
+
+**Step 2: Convert SOCKS Proxy to HTTP Proxy**
+
+1)Install http-proxy-to-socks package to covert socks proxy to http proxy
+   *npm install -g http-proxy-to-socks*
+
+2)Start the proxy conversion tool
+   hpts -s 127.0.0.1:5001 -p 8080
+   Now it will listen to http requests through 8080 and direct it to 5001 with the conversion
+
+**Step 3: Configure Postman to Use the HTTP Proxy**
+   1)Open Postman and go to Settings > Proxy.
+   2)Enable the proxy by entering the following details:
+   Proxy Server: 127.0.0.1:8080
